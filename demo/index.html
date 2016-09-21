@@ -41,7 +41,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
         <paper-button raised id="gen">generate</paper-button>
         <output></output>
         <script>
-          document.querySelector('#gen').addEventListener('tap', (e) => {
+          document.querySelector('#gen').addEventListener('tap', () => {
             var uuid = document.querySelector('uuid-generator').generate();
             document.querySelector('output').innerText = uuid;
           });
