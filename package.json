@@ -36,6 +36,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/--arc/uuid-generator.git"
+    "url": "git://github.com/advanced-rest-client/uuid-generator.git"
   }
 }
