@@ -9,3 +9,4 @@
 var uuid = document.querySelector('uuid-generator').generate();
 assert.equal(uuid, generatedUuid);
 ```
+
