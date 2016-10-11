@@ -1,6 +1,6 @@
 {
   "name": "uuid-generator",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "LICENSE.md",
   "description": "An UUID generator",
   "devDependencies": {
