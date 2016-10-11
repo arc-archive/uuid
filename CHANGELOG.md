@@ -1,3 +1,13 @@
+<a name="1.0.4"></a>
+## [1.0.4](https://github.com/advanced-rest-client/uuid-generator/compare/1.0.3...v1.0.4) (2016-10-11)
+
+
+### New
+
+* Added dependencyci integration ([5337664ab164d85aded455375725523b6b6319a3](https://github.com/advanced-rest-client/uuid-generator/commit/5337664ab164d85aded455375725523b6b6319a3))
+
+
+
 <a name="1.0.3"></a>
 ## [1.0.3](https://github.com/advanced-rest-client/uuid-generator/compare/1.0.2...v1.0.3) (2016-09-29)
 
