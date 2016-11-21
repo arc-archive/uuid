@@ -2,9 +2,12 @@
   "name": "uuid-generator",
   "description": "An UUID generator",
   "author": "Pawel Psztyc, The ARC team",
+  "license": "Apache-2.0 OR CC-BY-4.0",
   "keywords": [
     "web-components",
-    "polymer"
+    "polymer",
+    "uuid",
+    "generator"
   ],
   "private": true,
   "main": [

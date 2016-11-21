@@ -1,7 +1,7 @@
 {
   "name": "uuid-generator",
   "version": "1.0.4",
-  "license": "LICENSE.md",
+  "license": "Apache-2.0 OR CC-BY-4.0",
   "description": "An UUID generator",
   "devDependencies": {
     "conventional-github-releaser": "^1.1.1",
@@ -30,9 +30,12 @@
   ],
   "author": "Pawel Psztyc, The ARC team",
   "scripts": {
-    "lint": "gulp lint",
-    "serve": "polymer serve",
-    "test": "wct"
+    "serve": "node_modules/.bin/polymer serve",
+    "lint": "node_modules/.bin/polymer lint uuid-generator.html",
+    "test-sauce": "node_modules/.bin/polymer test --plugin sauce --job-name \"uuid-generator:local-test\"",
+    "test": "node_modules/.bin/polymer test",
+    "deps": "npm install --quiet && bower install --quiet",
+    "update-deps": "npm update --quiet && bower update --quiet"
   },
   "repository": {
     "type": "git",
