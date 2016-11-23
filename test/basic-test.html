@@ -32,10 +32,6 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
     <script>
     /* global suite, test, fixture, assert */
     suite('basic', function() {
-      test('`uuid-generator` should be initialized', function() {
-        var element = fixture('basic');
-        assert.equal(element.isAttached, true, 'element.isAttached equals true');
-      });
 
       test('should generate valid UUID', function() {
         var element = fixture('basic');
