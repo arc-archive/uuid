@@ -1,3 +1,13 @@
+<a name="2.0.0"></a>
+# [2.0.0](https://github.com/advanced-rest-client/uuid-generator/compare/1.0.4...2.0.0) (2018-03-30)
+
+
+### Update
+
+* Added new Travis configuration ([5a4c1dc0425be613380ce5f152d05b5b37820594](https://github.com/advanced-rest-client/uuid-generator/commit/5a4c1dc0425be613380ce5f152d05b5b37820594))
+
+
+
 <a name="1.0.4"></a>
 ## [1.0.4](https://github.com/advanced-rest-client/uuid-generator/compare/1.0.3...v1.0.4) (2016-10-11)
 
