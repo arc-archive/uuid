@@ -1,4 +1,4 @@
-<!--
+/**
 @license
 Copyright 2018 Pawel Psztyc, The ARC team
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -10,9 +10,9 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
--->
-<link rel="import" href="../polymer/polymer-element.html">
-<script>
+*/
+import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+
 /**
  * An UUID generator.
  *
@@ -25,8 +25,10 @@ the License.
  * @memberof LogicElements
  * @demo demo/index.html
  */
-class UuidGenerator extends Polymer.Element {
-  static get is() { return 'uuid-generator'; }
+class UuidGenerator extends PolymerElement {
+  static get is() {
+    return 'uuid-generator';
+  }
   static get properties() {
     return {
       // Last generated UUID.
@@ -64,11 +66,11 @@ class UuidGenerator extends Polymer.Element {
   }
 
   _hash() {
-    var d0 = Math.random() * 0xffffffff | 0;
-    var d1 = Math.random() * 0xffffffff | 0;
-    var d2 = Math.random() * 0xffffffff | 0;
-    var d3 = Math.random() * 0xffffffff | 0;
-    var lut = this._lut;
+    const d0 = Math.random() * 0xffffffff | 0;
+    const d1 = Math.random() * 0xffffffff | 0;
+    const d2 = Math.random() * 0xffffffff | 0;
+    const d3 = Math.random() * 0xffffffff | 0;
+    const lut = this._lut;
     return lut[d0 & 0xff] + lut[d0 >> 8 & 0xff] + lut[d0 >> 16 & 0xff] +
       lut[d0 >> 24 & 0xff] + '-' + lut[d1 & 0xff] + lut[d1 >> 8 & 0xff] + '-' +
       lut[d1 >> 16 & 0x0f | 0x40] + lut[d1 >> 24 & 0xff] + '-' + lut[d2 & 0x3f | 0x80] +
@@ -87,4 +89,3 @@ class UuidGenerator extends Polymer.Element {
   }
 }
 window.customElements.define(UuidGenerator.is, UuidGenerator);
-</script>

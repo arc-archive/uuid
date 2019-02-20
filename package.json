@@ -1,14 +1,31 @@
 {
-  "name": "@advanced-rest-client/uuid-generator",
-  "version": "2.0.0",
-  "license": "Apache-2.0",
   "description": "An UUID generator",
+  "keywords": [
+    "web-components",
+    "polymer",
+    "uuid",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/uuid-generator.git"
+  },
+  "name": "@advanced-rest-client/uuid-generator",
+  "version": "3.0.0-preview.1",
+  "license": "Apache-2.0",
   "devDependencies": {
     "@polymer/gen-typescript-declarations": "^1.6.1",
-    "bower": "^1.8.8"
+    "@polymer/iron-demo-helpers": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "@polymer/iron-test-helpers": "^3.0.0",
+    "@polymer/iron-component-page": "^4.0.0",
+    "@polymer/paper-button": "^3.0.0",
+    "@polymer/test-fixture": "^4.0.2",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "wct-mocha": "^1.0.0"
   },
-  "private": false,
-  "main": "uuid-generator.html",
+  "main": "uuid-generator.js",
   "authors": [
     "pawel Psztyc",
     "The Advanced REST client authors <arc@mulesoft.com>"
@@ -16,11 +33,14 @@
   "scripts": {
     "lint": "polymer lint uuid-generator.html",
     "test-sauce": "polymer test --plugin sauce --job-name \"uuid-generator:local-test\"",
-    "test": "polymer test",
+    "test": "polymer test  --plugin local",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/advanced-rest-client/uuid-generator.git"
+  "contributors": [
+    "pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
+  "dependencies": {
+    "@polymer/polymer": "^3.0.0"
   }
 }

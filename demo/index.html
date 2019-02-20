@@ -5,16 +5,21 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
   <title>uuid-generator demo</title>
-  <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
-  <link rel="import" href="../../polymer/lib/elements/dom-bind.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="../../paper-button/paper-button.html">
-  <link rel="import" href="../uuid-generator.html">
+
+  <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <script type="module">
+    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
+    import '@polymer/iron-demo-helpers/demo-snippet.js';
+    import '@polymer/polymer/lib/elements/dom-bind.js';
+    import '@polymer/paper-button/paper-button.js';
+    import '../uuid-generator.js';
+  </script>
+
   <custom-style>
     <style is="custom-style" include="demo-pages-shared-styles">
     </style>
-  </custom-style>
+  </custom-style>`
 </head>
 <body unresolved>
   <div class="vertical-section-container centered">
@@ -22,10 +27,10 @@
     <demo-snippet>
       <template>
         <uuid-generator></uuid-generator>
-        <paper-button raised id="gen">generate</paper-button>
+        <paper-button raised="" id="gen">generate</paper-button>
         <output></output>
         <script>
-          document.querySelector('#gen').addEventListener('tap', () => {
+          document.querySelector('#gen').addEventListener('click', () => {
             const uuid = document.querySelector('uuid-generator').generate();
             document.querySelector('output').innerText = uuid;
           });
@@ -38,7 +43,7 @@
       <template>
         <dom-bind>
           <template>
-            <uuid-generator auto last-uuid="{{generatedUuid}}"></uuid-generator>
+            <uuid-generator auto="" last-uuid="{{generatedUuid}}"></uuid-generator>
             <output>[[generatedUuid]]</output>
           </template>
         </dom-bind>
