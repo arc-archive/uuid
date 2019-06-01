@@ -6,30 +6,62 @@
 
 An UUID generator as a  web component.
 
-<!---
-```
-<custom-element-demo>
-  <template>
-    <link rel="import" href="uuid-generator.html">
-    <link rel="import" href="../polymer/lib/elements/dom-if.html">
-    <next-code-block></next-code-block>
-  </template>
-</custom-element-demo>
-```
--->
-
-```html
-<dom-bind>
-  <template is="dom-bind">
-    <uuid-generator last-uuid="{{generatedUuid}}"></uuid-generator>
-    <p>Latest generated UUID: [[generatedUuid]]</p>
-    <script>
-    document.querySelector('uuid-generator').generate();
-    </script>
-  </template>
-</dom-bind>
-```
-
 ### API components
 
-This components is a part of API components ecosystem: https://elements.advancedrestclient.com/
+This components is a part of [API components ecosystem](https://elements.advancedrestclient.com/)
+
+## Usage
+
+### Installation
+
+```sh
+npm install --save @advanced-rest-client/uuid-generator
+```
+
+### In an html file
+
+```html
+<html>
+  <head>
+    <script type="module">
+      import '@advanced-rest-client/uuid-generator/uuid-generator.js';
+    </script>
+  </head>
+  <body>
+    <uuid-generator></uuid-generator>
+  </body>
+</html>
+```
+
+### In a other element
+
+```js
+import { LitElement, html } from 'lit-element';
+import '@advanced-rest-client/uuid-generator/uuid-generator.js';
+
+class SampleElement extends LitElement {
+  render() {
+    return html`<uuid-generator></uuid-generator>`;
+  }
+}
+customElements.define('sample-element', SampleElement);
+```
+
+### Development
+
+```sh
+git clone https://github.com/advanced-rest-client/uuid-generator
+cd uuid-generator
+npm install
+```
+
+### Running the demo locally
+
+```sh
+npm start
+```
+
+### Running the tests
+```sh
+npm test
+```

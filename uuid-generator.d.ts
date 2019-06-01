@@ -12,7 +12,9 @@
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
 // tslint:disable:no-any describes the API as best we are able today
 
-import {PolymerElement} from '@polymer/polymer/polymer-element.js';
+import {LitElement} from 'lit-element';
+
+export {UuidGenerator};
 
 declare namespace LogicElements {
 
@@ -24,21 +26,24 @@ declare namespace LogicElements {
    * <uuid-generator auto last-uuid="{{generatedUuid}}"></uuid-generator>
    * ```
    */
-  class UuidGenerator extends PolymerElement {
+  class UuidGenerator extends LitElement {
+    auto: boolean|null|undefined;
 
     /**
      * Last generated UUID.
      */
     lastUuid: string|null|undefined;
+    _lut: any[]|null|undefined;
+    constructor();
+    _genLut(): any;
+    _autoChanged(state: any): void;
 
     /**
-     * If set it generates uuid and sets it to `lastUuid` once the element
-     * is ready.
+     * Creates an UUID string
+     *
+     * @returns Generated value
      */
-    auto: boolean|null|undefined;
-    readonly _lut: any[]|null|undefined;
-    _autoChanged(state: any): void;
-    _hash(): any;
+    _hash(): String|null;
 
     /**
      * Generate a RFC4122, version 4 ID. Example:

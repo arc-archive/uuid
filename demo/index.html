@@ -9,46 +9,22 @@
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
   <script type="module">
-    import '@polymer/iron-demo-helpers/demo-pages-shared-styles.js';
-    import '@polymer/iron-demo-helpers/demo-snippet.js';
-    import '@polymer/polymer/lib/elements/dom-bind.js';
-    import '@polymer/paper-button/paper-button.js';
+    import '../node_modules/@polymer/paper-button/paper-button.js';
     import '../uuid-generator.js';
   </script>
-
-  <custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
-  </custom-style>`
 </head>
 <body unresolved>
   <div class="vertical-section-container centered">
     <h3>Generate the UUID</h3>
-    <demo-snippet>
-      <template>
-        <uuid-generator></uuid-generator>
-        <paper-button raised="" id="gen">generate</paper-button>
-        <output></output>
-        <script>
-          document.querySelector('#gen').addEventListener('click', () => {
-            const uuid = document.querySelector('uuid-generator').generate();
-            document.querySelector('output').innerText = uuid;
-          });
-        </script>
-      </template>
-    </demo-snippet>
-
-    <h3>Auto generate</h3>
-    <demo-snippet>
-      <template>
-        <dom-bind>
-          <template>
-            <uuid-generator auto="" last-uuid="{{generatedUuid}}"></uuid-generator>
-            <output>[[generatedUuid]]</output>
-          </template>
-        </dom-bind>
-      </template>
-    </demo-snippet>
+    <uuid-generator></uuid-generator>
+    <paper-button raised="" id="gen">generate</paper-button>
+    <output></output>
+    <script>
+      document.querySelector('#gen').addEventListener('click', () => {
+        const uuid = document.querySelector('uuid-generator').generate();
+        document.querySelector('output').innerText = uuid;
+      });
+    </script>
   </div>
 </body>
 </html>

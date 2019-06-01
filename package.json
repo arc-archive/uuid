@@ -11,30 +11,31 @@
     "url": "git://github.com/advanced-rest-client/uuid-generator.git"
   },
   "name": "@advanced-rest-client/uuid-generator",
-  "version": "3.0.0-preview.2",
+  "version": "3.0.0-preview.3",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@open-wc/testing": "^0.12.5",
+    "@open-wc/testing-karma": "^2.0.3",
+    "@open-wc/testing-karma-bs": "^1.1.3",
     "@polymer/gen-typescript-declarations": "^1.6.1",
-    "@polymer/iron-component-page": "^4.0.0",
-    "@polymer/iron-demo-helpers": "^3.1.0",
-    "@polymer/iron-test-helpers": "^3.0.0",
     "@polymer/paper-button": "^3.0.0",
-    "@polymer/test-fixture": "^4.0.2",
     "@webcomponents/webcomponentsjs": "^2.0.0",
-    "chai": "^4.2.0",
-    "mocha": "^5.2.0",
-    "wct-mocha": "^1.0.0"
+    "owc-dev-server": "^0.4.3",
+    "sinon": "^7.3.2"
   },
   "main": "uuid-generator.js",
+  "module": "uuid-generator.js",
   "authors": [
     "pawel Psztyc",
     "The Advanced REST client authors <arc@mulesoft.com>"
   ],
   "scripts": {
-    "lint": "polymer lint uuid-generator.html",
-    "test-sauce": "polymer test --plugin sauce --job-name \"uuid-generator:local-test\"",
-    "test": "polymer test  --plugin local",
-    "test-coverage": "polymer test --plugin local",
+    "start": "owc-dev-server -o",
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:legacy": "karma start --legacy --coverage",
+    "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
+    "test:bs": "karma start karma.bs.config.js --legacy --coverage",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
   "contributors": [
@@ -42,6 +43,6 @@
     "The Advanced REST client authors <arc@mulesoft.com>"
   ],
   "dependencies": {
-    "@polymer/polymer": "^3.2.0"
+    "lit-element": "^2.1.0"
   }
 }
