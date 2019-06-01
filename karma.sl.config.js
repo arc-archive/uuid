@@ -4,15 +4,17 @@ const slSettings = require('@advanced-rest-client/testing-karma-sl/sl-settings.j
 const createBaseConfig = require('./karma.conf.js');
 
 module.exports = (config) => {
+  const sauceLabs = {
+    testName: 'uuid-generator',
+    startConnect: true
+  };
+  if (process.env.TRAVIS_JOB_NUMBER) {
+    sauceLabs.startConnect = false;
+    sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+  }
   config.set(
     merge(slSettings(config), createBaseConfig(config), {
-      sauceLabs: {
-        testName: 'uuid-generator',
-        tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
-        // username: process.env.SAUCE_USERNAME,
-        // accessKey: process.env.SAUCE_ACCESS_KEY,
-        startConnect: false
-      },
+      sauceLabs
     })
   );
 
