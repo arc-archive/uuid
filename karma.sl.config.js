@@ -20,11 +20,6 @@ module.exports = (config) => {
     cnf.sauceLabs.build = buildLabel;
     // cnf.sauceLabs.startConnect = false;
     cnf.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
-    cnf.sauceLabs.recordScreenshots = true;
-
-    // Try 'websocket' for a faster transmission first. Fallback to 'polling' if necessary.
-    cnf.transports = ['websocket', 'polling'];
-    cnf.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
   }
   config.set(
     merge(slSettings(config), createBaseConfig(config), cnf)

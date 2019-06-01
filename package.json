@@ -14,7 +14,7 @@
   "version": "3.0.0-preview.3",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@advanced-rest-client/testing-karma-sl": "^1.0.1",
+    "@advanced-rest-client/testing-karma-sl": "^1.0.2",
     "@open-wc/testing": "^0.12.5",
     "@open-wc/testing-karma": "^2.0.3",
     "@polymer/gen-typescript-declarations": "^1.6.1",
