@@ -12,7 +12,7 @@ addons:
   sauce_connect: true
 script:
 - npm test
-- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then test:bs; fi
+- if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then npm run test:bs; fi
 env:
   global:
   - secure: XbPH4IC4zvitvuDLibr82PVkyE5V/wAGLHKkoH5wliWwCI8wGNRC5i/jz+MSV+STIfp6aWhPNjq8upqLGM/WGRwmxV/PIRsIdbolQs+IP4fDqGwh3/N07eFdWGrNGrOz/P80Lr7Ncb0f+ZDh/gUNJTqLKRtRQSEX3m9PNZZASKK3ISaTC7JhDoRw6SV+QcoX9G0jb8NuwLDMLNW3zOfZq7pRu3s3y6FSWHKGBvouarQrqWLqj7ed7681RIeIbfHDVvTswmWVd9qJGqy2zHVqD/2TuiYDhQQa01/CivT+KCvkyFg5dBeBCJQF8lWFjx2CbwjnXA0SiwklCXLd0KXAx+mdQGcXvrth9XzjUgsqGaAZ6fZKK09LhJSAG6UTKHJTWSxgJ2ueqAYkvF8znqaODJXAw1/u4QvIpEtO02OTT9Cj0OvvKEvUA/t7Ycr7Vgha57XzO5Pa8RuaLnkDWtqybekgfgxdV5uJBoOXMBwLQhlP0tEPdm7PRtJmxhnB69BEBccA7aZlQyV8DMBwyODFV8S/+n273pXlxx0TEKdji/XxLlxULdMPCVwlorJsqpvVXLmSbvMJEmrPpzTYJ049J/eEvEMSniEiWsFGLb9df34jhLVOnRzdnP5CqvLVNOSVaiSxEA0oCDpadaKPfMe+f/mPLXTMEqkPHhk/LgLxTQw=
