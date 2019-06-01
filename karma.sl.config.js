@@ -7,7 +7,11 @@ module.exports = (config) => {
   config.set(
     merge(slSettings(config), createBaseConfig(config), {
       sauceLabs: {
-        testName: 'uuid-generator'
+        testName: 'uuid-generator',
+        tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+        username: process.env.SAUCE_USERNAME,
+        accessKey: process.env.SAUCE_ACCESS_KEY,
+        startConnect: false
       },
     })
   );
