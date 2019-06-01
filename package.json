@@ -34,6 +34,7 @@
     "lint": "polymer lint uuid-generator.html",
     "test-sauce": "polymer test --plugin sauce --job-name \"uuid-generator:local-test\"",
     "test": "polymer test  --plugin local",
+    "test-coverage": "polymer test --plugin local",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
   "contributors": [
