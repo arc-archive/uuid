@@ -12,13 +12,12 @@ module.exports = (config) => {
   if (process.env.TRAVIS) {
     const buildLabel = 'TRAVIS #' + process.env.TRAVIS_BUILD_NUMBER + ' (' + process.env.TRAVIS_BUILD_ID + ')';
 
-    cnf.browserStack = {};
-    cnf.browserStack.build = buildLabel;
-    // cnf.browserStack.startTunnel = false;
-    cnf.browserStack.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
+    cnf.browserStack = {
+      build: buildLabel,
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER
+    };
 
     cnf.sauceLabs.build = buildLabel;
-    // cnf.sauceLabs.startConnect = false;
     cnf.sauceLabs.tunnelIdentifier = process.env.TRAVIS_JOB_NUMBER;
   }
   config.set(
