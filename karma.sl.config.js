@@ -7,8 +7,7 @@ module.exports = (config) => {
   config.set(
     merge(slSettings(config), createBaseConfig(config), {
       sauceLabs: {
-        testName: 'uuid-generator',
-        startConnect: true
+        testName: 'uuid-generator'
       },
     })
   );
