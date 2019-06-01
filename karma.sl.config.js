@@ -1,13 +1,14 @@
 /* eslint-disable import/no-extraneous-dependencies */
 const merge = require('webpack-merge');
-const bsSettings = require('@open-wc/testing-karma-bs/bs-settings.js');
+const slSettings = require('@advanced-rest-client/testing-karma-sl/sl-settings.js');
 const createBaseConfig = require('./karma.conf.js');
 
 module.exports = (config) => {
   config.set(
-    merge(bsSettings(config), createBaseConfig(config), {
-      browserStack: {
-        project: 'uuid-generator',
+    merge(slSettings(config), createBaseConfig(config), {
+      sauceLabs: {
+        testName: 'uuid-generator',
+        startConnect: true
       },
     })
   );

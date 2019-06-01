@@ -14,9 +14,9 @@
   "version": "3.0.0-preview.3",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@advanced-rest-client/testing-karma-sl": "^1.0.0",
     "@open-wc/testing": "^0.12.5",
     "@open-wc/testing-karma": "^2.0.3",
-    "@open-wc/testing-karma-bs": "^1.1.3",
     "@polymer/gen-typescript-declarations": "^1.6.1",
     "@polymer/paper-button": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
@@ -35,7 +35,7 @@
     "test:watch": "karma start --auto-watch=true --single-run=false",
     "test:legacy": "karma start --legacy --coverage",
     "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
-    "test:bs": "karma start karma.bs.config.js --legacy --coverage",
+    "test:sl": "karma start karma.sl.config.js --legacy --coverage",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
   "contributors": [
