@@ -14,6 +14,7 @@
   "version": "3.0.0",
   "license": "Apache-2.0",
   "devDependencies": {
+    "@advanced-rest-client/arc-demo-helper": "^1.0.1",
     "@advanced-rest-client/testing-karma-sl": "^1.0.2",
     "@open-wc/testing": "^0.12.5",
     "@open-wc/testing-karma": "^2.0.3",
