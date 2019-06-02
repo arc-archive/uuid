@@ -1,4 +1,4 @@
-<!--
+/**
 @license
 Copyright 2018 Pawel Psztyc, The ARC team
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
@@ -10,9 +10,8 @@ distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
 WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
--->
-<link rel="import" href="../polymer/polymer-element.html">
-<script>
+*/
+import { LitElement } from 'lit-element';
 /**
  * An UUID generator.
  *
@@ -21,39 +20,44 @@ the License.
  * <uuid-generator auto last-uuid="{{generatedUuid}}"></uuid-generator>
  * ```
  * @customElement
- * @polymer
  * @memberof LogicElements
  * @demo demo/index.html
  */
-class UuidGenerator extends Polymer.Element {
-  static get is() { return 'uuid-generator'; }
+export class UuidGenerator extends LitElement {
   static get properties() {
     return {
       // Last generated UUID.
-      lastUuid: {
-        type: String,
-        notify: true
-      },
-      /**
-       * If set it generates uuid and sets it to `lastUuid` once the element
-       * is ready.
-       */
-      auto: {
-        type: Boolean,
-        observer: '_autoChanged'
-      },
-      _lut: {
-        type: Array,
-        readOnly: true,
-        value: function() {
-          const result = [];
-          for (let i = 0; i < 256; i++) {
-            result[i] = (i < 16 ? '0' : '') + (i).toString(16);
-          }
-          return result;
-        }
-      }
+      lastUuid: {type: String},
+      auto: {type: Boolean, reflect: true},
+      _lut: {type: Array}
     };
+  }
+
+  constructor() {
+    super();
+    this._lut = this._genLut();
+  }
+
+  get auto() {
+    return this._auto;
+  }
+  /**
+   * If set it generates uuid and sets it to `lastUuid` once the element
+   * is ready.
+   *
+   * @param {Boolean} value
+   */
+  set auto(value) {
+    this._auto = value;
+    this._autoChanged(value);
+  }
+
+  _genLut() {
+    const result = [];
+    for (let i = 0; i < 256; i++) {
+      result[i] = (i < 16 ? '0' : '') + (i).toString(16);
+    }
+    return result;
   }
 
   _autoChanged(state) {
@@ -62,13 +66,16 @@ class UuidGenerator extends Polymer.Element {
     }
     this.generate();
   }
-
+  /**
+   * Creates an UUID string
+   * @return {String} Generated value
+   */
   _hash() {
-    var d0 = Math.random() * 0xffffffff | 0;
-    var d1 = Math.random() * 0xffffffff | 0;
-    var d2 = Math.random() * 0xffffffff | 0;
-    var d3 = Math.random() * 0xffffffff | 0;
-    var lut = this._lut;
+    const d0 = Math.random() * 0xffffffff | 0;
+    const d1 = Math.random() * 0xffffffff | 0;
+    const d2 = Math.random() * 0xffffffff | 0;
+    const d3 = Math.random() * 0xffffffff | 0;
+    const lut = this._lut;
     return lut[d0 & 0xff] + lut[d0 >> 8 & 0xff] + lut[d0 >> 16 & 0xff] +
       lut[d0 >> 24 & 0xff] + '-' + lut[d1 & 0xff] + lut[d1 >> 8 & 0xff] + '-' +
       lut[d1 >> 16 & 0x0f | 0x40] + lut[d1 >> 24 & 0xff] + '-' + lut[d2 & 0x3f | 0x80] +
@@ -82,9 +89,15 @@ class UuidGenerator extends Polymer.Element {
    * @return {String} The UUID string.
    */
   generate() {
-    this.lastUuid = this._hash();
+    const value = this._hash();
+    this.lastUuid = value;
+    // Compatibility with Polymer.
+    this.dispatchEvent(new CustomEvent('last-uuid-changed', {
+      detail: {
+        value
+      }
+    }));
     return this.lastUuid;
   }
 }
-window.customElements.define(UuidGenerator.is, UuidGenerator);
-</script>
+window.customElements.define('uuid-generator', UuidGenerator);

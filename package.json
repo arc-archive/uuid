@@ -1,26 +1,49 @@
 {
-  "name": "@advanced-rest-client/uuid-generator",
-  "version": "2.0.0",
-  "license": "Apache-2.0",
   "description": "An UUID generator",
-  "devDependencies": {
-    "@polymer/gen-typescript-declarations": "^1.6.1",
-    "bower": "^1.8.8"
+  "keywords": [
+    "web-components",
+    "polymer",
+    "uuid",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/advanced-rest-client/uuid-generator.git"
   },
-  "private": false,
-  "main": "uuid-generator.html",
+  "name": "@advanced-rest-client/uuid-generator",
+  "version": "3.0.0",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@advanced-rest-client/arc-demo-helper": "^1.0.1",
+    "@advanced-rest-client/testing-karma-sl": "^1.0.2",
+    "@open-wc/testing": "^0.12.5",
+    "@open-wc/testing-karma": "^2.0.3",
+    "@polymer/gen-typescript-declarations": "^1.6.1",
+    "@polymer/paper-button": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0",
+    "owc-dev-server": "^0.4.3",
+    "sinon": "^7.3.2"
+  },
+  "main": "uuid-generator.js",
+  "module": "uuid-generator.js",
   "authors": [
     "pawel Psztyc",
     "The Advanced REST client authors <arc@mulesoft.com>"
   ],
   "scripts": {
-    "lint": "polymer lint uuid-generator.html",
-    "test-sauce": "polymer test --plugin sauce --job-name \"uuid-generator:local-test\"",
-    "test": "polymer test",
+    "start": "owc-dev-server -o",
+    "test": "karma start --coverage",
+    "test:watch": "karma start --auto-watch=true --single-run=false",
+    "test:legacy": "karma start --legacy --coverage",
+    "test:legacy:watch": "karma start --legacy --auto-watch=true --single-run=false",
+    "test:sl": "karma start karma.sl.config.js --legacy --coverage",
     "update-types": "gen-typescript-declarations --deleteExisting --outDir ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/advanced-rest-client/uuid-generator.git"
+  "contributors": [
+    "pawel Psztyc",
+    "The Advanced REST client authors <arc@mulesoft.com>"
+  ],
+  "dependencies": {
+    "lit-element": "^2.1.0"
   }
 }
