@@ -14,12 +14,11 @@
   "version": "3.0.0",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@advanced-rest-client/arc-demo-helper": "^1.0.1",
+    "@advanced-rest-client/arc-demo-helper": "^1.0.2",
     "@advanced-rest-client/testing-karma-sl": "^1.0.2",
     "@open-wc/testing": "^0.12.5",
     "@open-wc/testing-karma": "^2.0.3",
     "@polymer/gen-typescript-declarations": "^1.6.1",
-    "@polymer/paper-button": "^3.0.0",
     "@webcomponents/webcomponentsjs": "^2.0.0",
     "owc-dev-server": "^0.4.3",
     "sinon": "^7.3.2"
@@ -42,8 +41,5 @@
   "contributors": [
     "pawel Psztyc",
     "The Advanced REST client authors <arc@mulesoft.com>"
-  ],
-  "dependencies": {
-    "lit-element": "^2.1.0"
-  }
+  ]
 }

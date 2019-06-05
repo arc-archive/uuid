@@ -10,55 +10,7 @@
 
 
 // tslint:disable:variable-name Describing an API that's defined elsewhere.
-// tslint:disable:no-any describes the API as best we are able today
 
-import {LitElement} from 'lit-element';
+import {UuidGenerator} from './UuidGenerator.js';
 
 export {UuidGenerator};
-
-declare namespace LogicElements {
-
-  /**
-   * An UUID generator.
-   *
-   * ## Example
-   * ```html
-   * <uuid-generator auto last-uuid="{{generatedUuid}}"></uuid-generator>
-   * ```
-   */
-  class UuidGenerator extends LitElement {
-    auto: boolean|null|undefined;
-
-    /**
-     * Last generated UUID.
-     */
-    lastUuid: string|null|undefined;
-    _lut: any[]|null|undefined;
-    constructor();
-    _genLut(): any;
-    _autoChanged(state: any): void;
-
-    /**
-     * Creates an UUID string
-     *
-     * @returns Generated value
-     */
-    _hash(): String|null;
-
-    /**
-     * Generate a RFC4122, version 4 ID. Example:
-     * "92329D39-6F5C-4520-ABFC-AAB64544E172"
-     * http://stackoverflow.com/a/21963136/1127848
-     *
-     * @returns The UUID string.
-     */
-    generate(): String|null;
-  }
-}
-
-declare global {
-
-  interface HTMLElementTagNameMap {
-    "uuid-generator": LogicElements.UuidGenerator;
-  }
-}

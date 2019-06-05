@@ -7,25 +7,29 @@
   <title>uuid-generator demo</title>
 
   <script src="../node_modules/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
-  <script type="module" src="../node_modules/@advanced-rest-client/arc-demo-helper/src/arc-demo-helper.js"></script>
+  <script type="module" src="../node_modules/@advanced-rest-client/arc-demo-helper/arc-demo-helper.js"></script>
 
-  <script type="module">
-    import '../node_modules/@polymer/paper-button/paper-button.js';
-    import '../uuid-generator.js';
-  </script>
+  <script type="module" src="../uuid-generator.js"></script>
 </head>
 <body unresolved>
   <div class="vertical-section-container centered">
     <h3>Generate the UUID</h3>
     <arc-demo-helper>
       <template>
-        <uuid-generator></uuid-generator>
-        <paper-button raised="" id="gen">generate</paper-button>
+        <uuid-generator auto="" id="gen"></uuid-generator>
+        <button id="run">GENERATE</button>
         <output></output>
         <script>
-          document.querySelector('#gen').addEventListener('click', () => {
-            const uuid = document.querySelector('uuid-generator').generate();
-            document.querySelector('output').innerText = uuid;
+          document.querySelector('#run')
+          .addEventListener('click', () => {
+            const generator = document.querySelector('#gen');
+            const uuid = generator.generate();
+            console.log(uuid);
+          });
+          document.querySelector('#gen')
+          .addEventListener('last-uuid-changed', (e) => {
+            const out = document.querySelector('output');
+            out.innerText = e.detail.value;
           });
         </script>
       </template>

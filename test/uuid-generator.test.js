@@ -1,6 +1,6 @@
 import { fixture, assert } from '@open-wc/testing';
 import sinon from 'sinon/pkg/sinon-esm.js';
-import {UuidGenerator} from '../uuid-generator.js';
+import { UuidGenerator } from '../uuid-generator.js';
 
 describe('uuid-generator', () => {
   it('has by default an empty string as label', async () => {
@@ -39,6 +39,29 @@ describe('auto property', () => {
     const last = element.lastUuid;
     assert.typeOf(last, 'string');
     assert.notEqual(last, first);
+  });
+
+  it('Has "auto" property set from the attribute', async () => {
+    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    assert.isTrue(element.auto);
+  });
+
+  it('Won\'t change lastUuid when removing "auto" attribute', async () => {
+    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    element.removeAttribute('auto');
+    assert.typeOf(element.lastUuid, 'string');
+  });
+
+  it('Removes "auto" attribute when setting "auto" property to false', async () => {
+    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    element.auto = false;
+    assert.isFalse(element.hasAttribute('auto'));
+  });
+
+  it('Adds "auto" attribute when setting "auto" property to true', async () => {
+    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
+    element.auto = true;
+    assert.isTrue(element.hasAttribute('auto'));
   });
 });
 

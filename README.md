@@ -4,7 +4,8 @@
 
 ## &lt;uuid-generator&gt;
 
-An UUID generator as a  web component.
+An UUID generator as a plain web component.
+It does not include any dependnecies.
 
 ### API components
 

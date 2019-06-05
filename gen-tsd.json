@@ -3,6 +3,8 @@
     "tasks/*",
     "demo/*",
     "test/*",
+    "node_modules/*",
+    "coverage/*",
     "index.html",
     "karma.*"
   ]
