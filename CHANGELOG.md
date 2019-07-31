@@ -125,3 +125,12 @@
 
 
 
+## [3.0.1](https://github.com/advanced-rest-client/uuid-generator/compare/1.0.4...3.0.1) (2019-07-31)
+
+
+### Bug Fixes
+
+* fixing npm audit errors by uphgrading to latest ARC standard ([ea3c4f5](https://github.com/advanced-rest-client/uuid-generator/commit/ea3c4f5))
+
+
+
