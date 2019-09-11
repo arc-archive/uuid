@@ -134,3 +134,17 @@
 
 
 
+## [3.0.2](https://github.com/advanced-rest-client/uuid-generator/compare/1.0.4...3.0.2) (2019-09-11)
+
+
+### Bug Fixes
+
+* fixing npm audit errors by uphgrading to latest ARC standard ([ea3c4f5](https://github.com/advanced-rest-client/uuid-generator/commit/ea3c4f5))
+
+
+### Features
+
+* adding aria-hidden attribute when initializing the element ([330a704](https://github.com/advanced-rest-client/uuid-generator/commit/330a704))
+
+
+
