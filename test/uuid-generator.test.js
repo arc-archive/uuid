@@ -1,8 +1,18 @@
 import { fixture, assert } from '@open-wc/testing';
-import sinon from 'sinon/pkg/sinon-esm.js';
+import * as sinon from 'sinon/pkg/sinon-esm.js';
 import { UuidGenerator } from '../uuid-generator.js';
 
 describe('uuid-generator', () => {
+  it('can be initialized with the constructor', () => {
+    const element = new UuidGenerator();
+    assert.ok(element);
+  });
+
+  it('can be initialized with the web apis', () => {
+    const element = document.createElement('uuid-generator');
+    assert.typeOf(element.generate, 'function');
+  });
+
   it('has by default an empty string as label', async () => {
     const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
     const uuid = element.generate();
