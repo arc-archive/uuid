@@ -77,6 +77,12 @@ export class UuidGenerator extends HTMLElement {
     }
   }
 
+  connectedCallback() {
+    if (!this.hasAttribute('aria-hidden')) {
+      this.setAttribute('aria-hidden', 'true');
+    }
+  }
+
   _genLut() {
     const result = [];
     for (let i = 0; i < 256; i++) {

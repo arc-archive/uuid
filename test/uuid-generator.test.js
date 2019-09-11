@@ -84,3 +84,10 @@ describe('last-uuid-changed event', () => {
     assert.equal(spy.args[0][0].detail.value, uuid);
   });
 });
+
+describe('a11y', () => {
+  it('is accessible', async () => {
+    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
+    await assert.isAccessible(element);
+  });
+});
