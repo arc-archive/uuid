@@ -11,6 +11,8 @@ WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
 License for the specific language governing permissions and limitations under
 the License.
 */
-import { UuidGenerator } from './UuidGenerator.js';
+import { UuidGeneratorElement as UuidGenerator } from './src/UuidGenerator.js';
+
+// This export is for compatibility
 export { UuidGenerator };
 window.customElements.define('uuid-generator', UuidGenerator);

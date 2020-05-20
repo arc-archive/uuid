@@ -1,5 +1,5 @@
 import { fixture, assert } from '@open-wc/testing';
-import * as sinon from 'sinon/pkg/sinon-esm.js';
+import * as sinon from 'sinon';
 import { UuidGenerator } from '../uuid-generator.js';
 
 describe('uuid-generator', () => {
@@ -14,7 +14,9 @@ describe('uuid-generator', () => {
   });
 
   it('has by default an empty string as label', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator></uuid-generator>'
+    ));
     const uuid = element.generate();
     assert.isString(uuid, 'UUID is a string');
     assert.lengthOf(uuid, 36, 'uuid has length of 36');
@@ -28,7 +30,9 @@ describe('uuid-generator', () => {
   });
 
   it('Sets lastUuid', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator></uuid-generator>'
+    ));
     const uuid = element.generate();
     assert.typeOf(element.lastUuid, 'string');
     assert.equal(element.lastUuid, uuid);
@@ -37,12 +41,16 @@ describe('uuid-generator', () => {
 
 describe('auto property', () => {
   it('Generates UUID automatically', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator auto></uuid-generator>'
+    ));
     assert.typeOf(element.lastUuid, 'string');
   });
 
   it('Regenrates uuid when auto status changes', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator auto></uuid-generator>'
+    ));
     const first = element.lastUuid;
     element.auto = false;
     element.auto = true;
@@ -52,24 +60,32 @@ describe('auto property', () => {
   });
 
   it('Has "auto" property set from the attribute', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator auto></uuid-generator>'
+    ));
     assert.isTrue(element.auto);
   });
 
   it('Won\'t change lastUuid when removing "auto" attribute', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator auto></uuid-generator>'
+    ));
     element.removeAttribute('auto');
     assert.typeOf(element.lastUuid, 'string');
   });
 
   it('Removes "auto" attribute when setting "auto" property to false', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator auto></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator auto></uuid-generator>'
+    ));
     element.auto = false;
     assert.isFalse(element.hasAttribute('auto'));
   });
 
   it('Adds "auto" attribute when setting "auto" property to true', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator></uuid-generator>'
+    ));
     element.auto = true;
     assert.isTrue(element.hasAttribute('auto'));
   });
@@ -87,7 +103,9 @@ describe('last-uuid-changed event', () => {
 
 describe('a11y', () => {
   it('is accessible', async () => {
-    const element = /** @type {UuidGenerator} */ (await fixture('<uuid-generator></uuid-generator>'));
+    const element = /** @type {UuidGenerator} */ (await fixture(
+      '<uuid-generator></uuid-generator>'
+    ));
     await assert.isAccessible(element);
   });
 });
