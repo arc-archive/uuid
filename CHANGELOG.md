@@ -230,3 +230,21 @@
  [fb856f6](https://github.com/advanced-rest-client/uuid-generator/commit/fb856f6486a1e76e8e3188be92593130a656ecf6) by jarrodek
 
 
+<a name="3.1.1"></a>
+## [3.1.1](https://github.com/advanced-rest-client/uuid-generator/compare/3.0.2...3.1.1) (2020-10-21)
+
+### Update
+
+* [ci skip] automated merge master->stage. syncing main branches [16bab1e](https://github.com/advanced-rest-client/uuid-generator/commit/16bab1eb9cc5e892b5d42996fdea9c0fdd12814d) by Ci agent
+
+
+### Features
+
+* adding bare import [2271b07](https://github.com/advanced-rest-client/uuid-generator/commit/2271b077397dea173af190e32d2175a54ea2dff6) by Pawel
+
+
+### Refactor
+
+* refactoring to a browser ready ES module [d51d005](https://github.com/advanced-rest-client/uuid-generator/commit/d51d005da65f9adb97e6cbbfc4722221b4f4a021) by Pawel
+
+
