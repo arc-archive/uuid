@@ -1,7 +1,3 @@
 coverage/
 test/
-demo/
-CONTRIBUTING.md
-polymer.json
 .*
-custom-elements.json
